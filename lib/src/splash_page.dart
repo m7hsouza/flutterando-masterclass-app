@@ -9,6 +9,15 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage> {
   @override
+  void initState() {
+    super.initState();
+
+    Future.delayed(const Duration(seconds: 3)).then((value) {
+      Navigator.pushReplacementNamed(context, '/');
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return const Material(
       color: Color(0xFF121517),
