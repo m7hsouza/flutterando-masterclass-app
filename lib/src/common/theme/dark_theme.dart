@@ -39,6 +39,11 @@ class DarkTheme {
         fontSize: 14,
         color: _textColor,
       ),
+      overline: GoogleFonts.montserrat(
+        fontWeight: FontWeight.w400,
+        fontSize: 12,
+        color: _titleColor,
+      ),
       button: GoogleFonts.poppins(
         fontSize: 12,
         fontWeight: FontWeight.w500,

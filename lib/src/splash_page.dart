@@ -1,24 +1,14 @@
 import 'package:flutter/material.dart';
 
-class SplashPage extends StatefulWidget {
+class SplashPage extends StatelessWidget {
   const SplashPage({Key? key}) : super(key: key);
 
   @override
-  State<SplashPage> createState() => _SplashPageState();
-}
-
-class _SplashPageState extends State<SplashPage> {
-  @override
-  void initState() {
-    super.initState();
-
-    Future.delayed(const Duration(seconds: 3)).then((value) {
-      Navigator.pushReplacementNamed(context, '/');
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
+    Future.delayed(const Duration(seconds: 3)).then((value) {
+      Navigator.of(context).pushReplacementNamed('/home');
+    });
+
     return const Material(
       color: Color(0xFF121517),
       child: Padding(

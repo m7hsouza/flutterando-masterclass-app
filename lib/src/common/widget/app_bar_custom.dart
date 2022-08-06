@@ -19,7 +19,14 @@ class AppBarCustom extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset('assets/images/logo.png'),
+            Navigator.of(context).canPop()
+                ? IconButton(
+                    icon: const Icon(Icons.arrow_back_ios_new),
+                    onPressed: () {
+                      Navigator.maybePop(context);
+                    },
+                  )
+                : Image.asset('assets/images/logo.png'),
             const SizedBox(width: 8),
             Column(
               mainAxisSize: MainAxisSize.min,
