@@ -2,13 +2,38 @@ import 'package:flutter/material.dart';
 
 import 'package:masterclass_app/src/common/theme/theme_controller.dart';
 
-class AppBarCustom extends StatelessWidget {
+class AppBarCustom extends StatefulWidget {
   const AppBarCustom({required this.title, Key? key}) : super(key: key);
 
   final String title;
 
   @override
+  State<AppBarCustom> createState() => _AppBarCustomState();
+}
+
+class _AppBarCustomState extends State<AppBarCustom> {
+  late bool _canPop;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _canPop = Navigator.canPop(context);
+  }
+
+  @override
   Widget build(BuildContext context) {
+    Widget trailing = Image.asset('assets/images/logo.png');
+
+    if (_canPop) {
+      trailing = IconButton(
+        icon: const Icon(Icons.arrow_back_ios_new),
+        onPressed: () {
+          Navigator.maybePop(context);
+        },
+      );
+    }
+
     final themeController = ThemeController.instance;
     final textTheme = Theme.of(context).textTheme;
 
@@ -19,20 +44,13 @@ class AppBarCustom extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Navigator.of(context).canPop()
-                ? IconButton(
-                    icon: const Icon(Icons.arrow_back_ios_new),
-                    onPressed: () {
-                      Navigator.maybePop(context);
-                    },
-                  )
-                : Image.asset('assets/images/logo.png'),
+            trailing,
             const SizedBox(width: 8),
             Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(title, style: textTheme.headline1),
+                Text(widget.title, style: textTheme.headline1),
                 Text('Masterclass Flutterando', style: textTheme.headline3),
               ],
             ),

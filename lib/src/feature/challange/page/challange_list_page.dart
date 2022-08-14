@@ -11,7 +11,7 @@ class ChallangeListPage extends StatelessWidget {
   final _challanges = <ChallangeModel>[
     ChallangeModel(
       title: 'Animações',
-      icon: 'assets/icons/awesome-running.png',
+      icon: 'assets/icons/animation.png',
       description: 'Estudos sobre animações implícitas e controladas, contendo 4 exercícios e 2 estudos',
       url: 'http://',
       exercises: [
@@ -21,12 +21,22 @@ class ChallangeListPage extends StatelessWidget {
     ),
     ChallangeModel(
       title: 'Leitura de Mockup',
-      icon: 'assets/icons/awesome-glasses.png',
+      icon: 'assets/icons/mockup.png',
       description: 'Aplicação da técnica de leitura de mockup, contendo 2 exercícios',
       url: 'http://',
       exercises: [
         {'title': 'Tela de login Tinder', 'route': '/challage/mockup/tinder'},
         {'title': 'Tela de login AppMoney', 'route': '/challage/mockup/smart-money'},
+      ],
+    ),
+    ChallangeModel(
+      title: 'Design Patterns',
+      icon: 'assets/icons/design-pattern.png',
+      description:
+          'Conecher e saber como aplicar alguns dos princpais Design Patterns como: MVC, MVVM, Repository e etc.',
+      url: 'http://',
+      exercises: [
+        {'title': 'Gerador de CPF', 'route': '/challage/design-pattern/document-generator'},
       ],
     ),
   ];

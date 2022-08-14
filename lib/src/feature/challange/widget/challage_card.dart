@@ -25,9 +25,12 @@ class ChallangeCard extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     backgroundColor: Theme.of(context).primaryColor,
-                    child: Image.asset(
-                      challage.icon,
-                      color: Theme.of(context).backgroundColor,
+                    child: Padding(
+                      padding: const EdgeInsets.all(4),
+                      child: Image.asset(
+                        challage.icon,
+                        color: Theme.of(context).backgroundColor,
+                      ),
                     ),
                   ),
                   const SizedBox(width: 12),

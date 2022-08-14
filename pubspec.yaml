@@ -40,6 +40,8 @@ dependencies:
     path: package/animation
   mockup:
     path: package/mockup
+  design_pattern:
+    path: package/design-pattern
 
 dev_dependencies:
   flutter_test:
