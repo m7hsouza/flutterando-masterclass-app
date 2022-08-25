@@ -20,4 +20,6 @@ final challangeRoutes = <String, WidgetBuilder>{
   '/challage/mockup/tinder': (_) => const TinderLoginPage(),
   '/challage/mockup/smart-money': (_) => AppMoneyLoginPage(),
   '/challage/design-pattern/document-generator': (_) => DocumentGenerator(),
+  '/challage/design-pattern/address': (_) => const AddressPage(),
+  '/challage/design-pattern/ibge': (_) => const IBGEPage()
 };

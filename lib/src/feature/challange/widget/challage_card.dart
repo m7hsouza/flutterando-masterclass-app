@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 
+import 'package:url_launcher/url_launcher.dart';
+
 import 'package:masterclass_app/src/feature/challange/model/challange_model.dart';
 
 class ChallangeCard extends StatelessWidget {
   const ChallangeCard(this.challage, {Key? key}) : super(key: key);
 
   final ChallangeModel challage;
+
+  Future<void> _launchUrl() async {
+    final url = Uri.parse(challage.url);
+
+    await launchUrl(url);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +61,7 @@ class ChallangeCard extends StatelessWidget {
                   ),
                   const SizedBox(width: 8),
                   GestureDetector(
+                    onTap: _launchUrl,
                     child: Text('Acessar código fonte', style: textTheme.overline),
                   ),
                   const Spacer(),
