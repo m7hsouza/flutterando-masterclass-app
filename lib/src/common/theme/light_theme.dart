@@ -12,6 +12,7 @@ class LightTheme {
   static const _iconColor = Color(0xFF172026);
 
   static final schema = ThemeData(
+    useMaterial3: true,
     brightness: Brightness.light,
     primaryColor: _primaryColor,
     backgroundColor: _backgroundColor,
@@ -31,6 +32,16 @@ class LightTheme {
         fontWeight: FontWeight.w500,
         fontSize: 12,
         color: _titleColor,
+      ),
+      headline4: GoogleFonts.poppins(
+        fontWeight: FontWeight.w500,
+        fontSize: 14,
+        color: _titleColor,
+      ),
+      bodyText1: GoogleFonts.poppins(
+        fontWeight: FontWeight.w500,
+        fontSize: 12,
+        color: _textColor,
       ),
       caption: GoogleFonts.montserrat(
         fontWeight: FontWeight.w400,

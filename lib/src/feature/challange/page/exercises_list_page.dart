@@ -17,13 +17,12 @@ class ExercisesListPage extends StatelessWidget {
     return Material(
       color: Theme.of(context).backgroundColor,
       child: SafeArea(
-        bottom: false,
         child: Column(
           children: [
             AppBarCustom(title: title),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 12),
                 child: ListView.builder(
                   itemCount: exercises.length,
                   itemBuilder: (_, index) {

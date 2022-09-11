@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:masterclass_app/src/common/widget/custom_card.dart';
 
 import 'package:url_launcher/url_launcher.dart';
 
@@ -19,9 +20,7 @@ class ChallangeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
 
-    return Card(
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+    return CustomCard(
       child: SizedBox(
         height: 220,
         child: Padding(

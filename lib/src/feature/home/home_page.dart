@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:masterclass_app/src/common/page/custom_page.dart';
+import 'package:masterclass_app/src/common/widget/app_bar_custom.dart';
 
 import 'package:masterclass_app/src/feature/challange/page/challange_list_page.dart';
+import 'package:masterclass_app/src/feature/github/page/github_repositories_page.dart';
+import 'package:masterclass_app/src/feature/home/home_store.dart';
 import 'package:masterclass_app/src/feature/home/widget/navigation_bar_custom.dart';
 import 'package:masterclass_app/src/feature/home/widget/navigation_bar_item_custom.dart';
+import 'package:masterclass_app/src/feature/profile/page/profile_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -12,23 +17,24 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _currentPage = 0;
+  late final HomeStore _store;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _store = HomeStore();
+
+    _store.addListener(() {
+      setState(() {});
+    });
+  }
 
   final _pages = <Widget>[
     ChallangeListPage(),
-    Container(
-      color: Colors.green,
-    ),
-    Container(
-      color: Colors.blue,
-    )
+    const GithubRepositoriesPage(),
+    ProfilePage(),
   ];
-
-  _onSelectedItem(int index) {
-    setState(() {
-      _currentPage = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,12 +43,19 @@ class _HomePageState extends State<HomePage> {
     return Material(
       color: Theme.of(context).colorScheme.background,
       child: SafeArea(
+        bottom: false,
         child: Column(
           children: [
-            Expanded(child: _pages[_currentPage]),
+            AppBarCustom(title: (_pages[_store.currentPage] as CustomPage).title),
+            const SizedBox(height: 16),
+            Expanded(
+                child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: _pages[_store.currentPage],
+            )),
             NavigationBarCustom(
-              selectedIndex: _currentPage,
-              onSelectedItem: _onSelectedItem,
+              selectedIndex: _store.currentPage,
+              onSelectedItem: _store.onSelectedItem,
               items: [
                 NavigationBarItemCustom(
                   icon: Image.asset('assets/icons/feather-target.png', color: iconColor),
@@ -54,7 +67,8 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const NavigationBarItemCustom(icon: Icon(Icons.person, size: 26), label: 'Sobre o dev'),
               ],
-            )
+            ),
+            const SizedBox(height: 8)
           ],
         ),
       ),

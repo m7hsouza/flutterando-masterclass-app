@@ -38,9 +38,9 @@ class _AppBarCustomState extends State<AppBarCustom> {
     final textTheme = Theme.of(context).textTheme;
 
     return SizedBox(
-      height: 80,
+      height: 60,
       child: Padding(
-        padding: const EdgeInsets.only(left: 16, right: 16, top: 24),
+        padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [

@@ -14,6 +14,7 @@ class DarkTheme {
   static const _iconColor = Color(0xFFEDF4F8);
 
   static final schema = ThemeData(
+    useMaterial3: true,
     brightness: Brightness.dark,
     primaryColor: _primaryColor,
     backgroundColor: _backgroundColor,
@@ -29,10 +30,20 @@ class DarkTheme {
         fontWeight: FontWeight.w500,
         color: _titleColor,
       ),
+      headline4: GoogleFonts.poppins(
+        fontSize: 14,
+        fontWeight: FontWeight.w500,
+        color: _titleColor,
+      ),
       headline3: GoogleFonts.poppins(
         fontWeight: FontWeight.w500,
         fontSize: 12,
         color: _titleColor,
+      ),
+      bodyText1: GoogleFonts.poppins(
+        fontWeight: FontWeight.w500,
+        fontSize: 12,
+        color: _textColor,
       ),
       caption: GoogleFonts.montserrat(
         fontWeight: FontWeight.w400,

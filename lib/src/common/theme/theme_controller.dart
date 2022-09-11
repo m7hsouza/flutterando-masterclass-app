@@ -5,7 +5,7 @@ class ThemeController {
 
   static final instance = ThemeController._();
 
-  ValueNotifier<bool> isDark = ValueNotifier(false);
+  ValueNotifier<bool> isDark = ValueNotifier(true);
 
   void toggleTheme() {
     isDark.value = !isDark.value;
