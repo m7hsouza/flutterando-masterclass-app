@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:masterclass_app/src/common/page/custom_page.dart';
 
-import 'package:masterclass_app/src/common/widget/app_bar_custom.dart';
 import 'package:masterclass_app/src/feature/challange/utils/challanges.dart';
 
 import '../widget/challage_card.dart';

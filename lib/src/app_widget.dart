@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import 'package:masterclass_app/src/common/theme/dark_theme.dart';
 import 'package:masterclass_app/src/common/theme/light_theme.dart';
